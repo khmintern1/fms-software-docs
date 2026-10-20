@@ -26,8 +26,8 @@ The system also integrates supporting libraries for UI components, data fetching
 │              Backend                 │
 │                                      │
 │       Laravel 11 · PHP 8.2+          │
-│  Sanctum · Spatie Permission          │
-│  Scramble · Laravel Horizon           │
+│  Sanctum · Spatie Permission         │
+│  Scramble · Laravel Horizon          │
 └──────────────────┬───────────────────┘
                    │
                    ▼

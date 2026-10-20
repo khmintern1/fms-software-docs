@@ -1,1 +1,23 @@
-site_name: My Docs
+site_name: Fuel Management System Documentation
+site_description: Technical Documentation for Sixth Kendra Fuel Management System
+
+nav:
+  - Home: index.md
+  - Project Overview: overview.md
+  - Requirements: requirements.md
+  - System Architecture: ‌architecture.md
+  - Technology Stack: techstack.md
+  - Database Design: database.md
+  - API Documentation: api.md
+  - Authentication & Authorization: authentication.md
+  - User Manual: user-manual.md
+  - Installation & Setup: installation.md
+  - Testing: testing.md
+  - Deployment & Maintenance: deployment.md
+
+theme:
+  name: readthedocs
+
+
+extra_css:
+  - extra.css

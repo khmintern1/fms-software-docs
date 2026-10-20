@@ -1,0 +1,23 @@
+
+/* Expand the main documentation content */
+.wy-nav-content {
+    max-width: 100% !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Keep the content area clean */
+.wy-nav-content-wrap {
+    background: #fcfcfc;
+}
+
+/* Make images and diagrams fit the content area */
+.wy-nav-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent wide tables from breaking the layout */
+.wy-table-responsive {
+    overflow-x: auto;
+}
