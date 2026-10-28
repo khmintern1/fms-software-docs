@@ -1,23 +1,47 @@
+
 site_name: Fuel Management System Documentation
 site_description: Technical Documentation for Sixth Kendra Fuel Management System
 
 nav:
   - Home: index.md
-  - Project Overview: overview.md
-  - Requirements: requirements.md
-  - System Architecture: ‌architecture.md
-  - Technology Stack: techstack.md
-  - Database Design: database.md
-  - API Documentation: api.md
-  - Authentication & Authorization: authentication.md
-  - User Manual: user-manual.md
-  - Installation & Setup: installation.md
-  - Testing: testing.md
-  - Deployment & Maintenance: deployment.md
+
+  - Project Documentation:
+      - Project Overview: overview.md
+      - Requirements: requirements.md
+      - System Architecture: architecture.md
+      - Technology Stack: techstack.md
+
+  - System Workflows:
+      - Authentication Workflow: workflows/authentication-and-authorization-sequence.md
+      - Sales Transaction Workflow: workflows/sale-transaction-sequence.md
+      - Fuel Delivery Workflow: workflows/fuel-in-sequence.md
+      - Price Change Workflow: workflows/price-change.md
+      - Start / End Session Workflow: workflows/start-end-session.md
+      - Credit Sale Workflow: workflows/credit-sale-and-payment-workflow.md
+
+  # - Business Logic & Formulas:
+  #     - Fuel Sales Formulas: formulas/sales.md
+  #     - Fuel Conversion: formulas/unit-conversion.md
+  #     - Dispenser Report: formulas/dispenser-report.md
+  #     - Tank Report: formulas/tank-report.md
+  #     - Fuel Delivery Report: formulas/fuel-delivery.md
+  #     - Daily Sales Report: formulas/daily-sales.md
+
+  # - Technical Reference:
+  #   - Database Design: database.md
+  #   - API Documentation: api.md
+  #   - Authentication & Authorization: authentication.md
+
+  # - User Guide:
+  #     - User Manual: user-manual.md
+
+  # - Development & Operations:
+  #     - Installation & Setup: installation.md
+  #     - Testing: testing.md
+  #     - Deployment & Maintenance: deployment.md
 
 theme:
   name: readthedocs
-
 
 extra_css:
   - extra.css

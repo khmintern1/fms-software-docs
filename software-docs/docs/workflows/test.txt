@@ -1,0 +1,66 @@
+# Fuel-In & Station Management Workflow
+
+## 1. Overview (ခြုံငုံသုံးသပ်ချက်)
+
+Fuel-In Workflow သည် စက်သုံးဆီဆိုင် စီမံခန့်ခွဲမှုစနစ် (Fuel Management System - FMS) အတွင်း ဆီဘောက်ဆာကားများမှ ဆီတိုင်ကီထဲသို့ ဆီဖြည့်သွင်းခြင်း (Fuel Delivery) နှင့် လက်ကျန်ဆီစာရင်း (Stock) ပြင်ဆင်ခြင်းဆိုင်ရာ အဆင့်များကို ဖော်ပြထားပါသည်။
+
+ဤလုပ်ငန်းစဉ်တွင် **Station Manager**၊ **Local Frontend UI**၊ **Local Laravel Backend**၊ **ATG Hardware Probe** (Automatic Tank Gauge)၊ **Mosquitto MQTT Broker**၊ **Local Database** နှင့် **Observer & Queue Job** တို့အကြား အပြန်အလှန် ချိတ်ဆက်ဆောင်ရွက်ပုံများကို အသေးစိတ် ဖော်ပြထားပါသည်။[cite: 2]
+
+---
+
+## 2. Workflow Diagram (လုပ်ငန်းစဉ် ပြdiagram)
+
+အောက်ပါ Sequence Diagram သည် Fuel-In Delivery စတင်ချိန်မှ Stock သတင်းအချက်အလက် ပြင်ဆင်ပြီးသည်အထိ စနစ်အတွင်းရှိ အစိတ်အပိုင်းများ အပြန်အလှန် အလုပ်လုပ်ပုံကို ပြသထားပါသည်။[cite: 2]
+
+![Fuel-In & Station Management Sequence Diagram](../images/workflows/fuel-in-sequence.jpg)
+
+**Figure 1: Fuel-In Delivery Sequence Diagram**[cite: 2]
+
+---
+
+## 3. Workflow Steps (လုပ်ငန်းစဉ် အဆင့်များ)
+
+### Phase 1: Real-time Tank Monitoring (ဆီတိုင်ကီ အခြေအနေ စောင့်ကြည့်ခြင်း)
+
+* **[Station HAS ATG Hardware] (ATG စက်ပစ္စည်း ရှိသောဆိုင်များ):**[cite: 2]
+  1. ATG Hardware Probe သည် ဆီတိုင်ကီ၏ အချက်အလက်များကို Local Backend API သို့ စဉ်ဆက်မပြတ် (Stream) ပို့ပေးပါသည် (ဆီအနက်၊ ရေအနက်၊ အပူချိန်)[cite: 2]။
+  2. Local Laravel Backend သည် တိုင်ကီ၏ လက်ရှိ အချက်အလက် (Snapshot) များကို Local Database တွင် သိမ်းဆည်းထားပါသည်[cite: 2]။
+
+---
+
+### Phase 2: Fuel-In Entry Options (ဆီအဝင်စာရင်း ထည့်သွင်းခြင်း)
+
+* **Option A: Station HAS ATG Hardware (ATG ရှိသောဆိုင်များ):**[cite: 2]
+  1. Station Manager သည် Local Frontend UI တွင် `Fuel-In Delivery Form` ကို ဖွင့်ပါသည်[cite: 2]။
+  2. တိုင်ကီပေးသွင်းသူ (Supplier)၊ အင်ဗွိုက်စာရင်းဝင် ပမာဏ (Invoice Vol)၊ စက်သုံးဆီအမျိုးအစား (Product) နှင့် ဦးတည်မည့် တိုင်ကီ (Tank Target) တို့ကို ဖြည့်သွင်းပါသည်[cite: 2]။
+
+* **Option B: Station DOES NOT HAVE ATG Hardware (ATG မရှိသောဆိုင်များ):**[cite: 2]
+  1. Station Manager သည် Local Frontend UI တွင် `Fuel-In Delivery Form` ကို ဖွင့်ပါသည်[cite: 2]။
+  2. မဆီမဖြည့်မီ တိုင်ကီ၏ မူလဆီအနက် (Initial Tank Dip Level) ကို ကိုယ်တိုင် တိုင်းတာ၍ ရိုက်ထည့်ပါသည် (Pre-delivery)[cite: 2]။
+  3. တိုင်ကီပေးသွင်းသူ၊ အင်ဗွိုက်ပမာဏ၊ စက်သုံးဆီအမျိုးအစား နှင့် ဦးတည်မည့် တိုင်ကီတို့ကို ဖြည့်သွင်းပါသည်[cite: 2]။
+
+---
+
+### Phase 3: Backend Processing & Stock Adjustment (အချက်အလက် စစ်ဆေးပြီး လက်ကျန်ပြင်ဆင်ခြင်း)
+
+1. Frontend သည် `POST /v1/api/local/fuel-in` Request ကို Local Backend သို့ ပို့လိုက်ပါသည်[cite: 2]။
+2. **ATG ရှိပါက:** ATG Hardware မှ မဆီမဖြည့်မီ လက်ရှိ Tank Balance ကို အလိုအလျောက် ရယူပါသည်[cite: 2]။
+3. **ATG မရှိပါက:** Manager ကိုယ်တိုင် ရိုက်ထည့်လိုက်သော Initial Tank Dip Level ကို အသုံးပြုပါသည်။[cite: 2]
+4. Local Backend သည် **Fuel-In Audit Entry** စာရင်းကို Database တွင် မှတ်တမ်းတင်ပါသည်[cite: 2]။
+5. တိုင်ကီ၏ ဆီလက်ကျန် စာရင်း (Tank Balance) ကို ပြင်ဆင်ပြီး စာရင်းနှင့် အမှန်တကယ် ကွာခြားချက် (Variance) ကို တွက်ချက်ပါသည်[cite: 2]။
+6. Local Backend မှ အောင်မြင်ကြောင်း အကျဉ်းချုပ် (Success Summary) နှင့် အသစ်ပြင်ဆင်ထားသော Stock Report ကို Frontend သို့ ပြန်လည်ပေးပို့ပါသည်[cite: 2]။
+
+---
+
+### Phase 4: Cloud Synchronization (Cloud ပေါ်သို့ စာရင်းတင်ခြင်း)
+
+1. Local Database မှ အချက်အလက် ပြောင်းလဲမှုကို တုံ့ပြန်ရန် **Cloud Sync Observer** ကို Trigger လုပ်လိုက်ပါသည်[cite: 2]။
+2. Observer သည် ဆီအဝင် စာရင်းမှတ်တမ်းများကို Cloud ပေါ်သို့ Sync လုပ်ပေးရန် **SyncTransactionCloud Job** အား Queue System ထဲသို့ ထည့်သွင်း (Dispatch) ပေးလိုက်ပါသည်[cite: 2]။
+
+---
+
+## 4. Expected Result (မျှော်မှန်းထားသော ရလဒ်)
+
+* **ဆီအဝင် စာရင်းတိကျခြင်း:** ဆီဖြည့်သွင်းမှု ဖြစ်စဉ်တစ်ခုလုံးကို စနစ်တကျ မှတ်တမ်းတင်နိုင်ပြီး ATG သို့မဟုတ် Manual Dip စနစ် နှစ်မျိုးစလုံးဖြင့် စာရင်းမှန်ကန်စေပါသည်။[cite: 2]
+* **Stock ပြင်ဆင်မှု မှန်ကန်ခြင်း:** တိုင်ကီအတွင်းရှိ ဆီလက်ကျန်များ အလိုအလျောက် တိုးသွားမည်ဖြစ်ပြီး ခြားနားချက် (Variance) များကို တွက်ချက်ပေးမည် ဖြစ်ပါသည်။[cite: 2]
+* **အလိုအလျောက် Cloud Sync:** Local တွင် ဆီအဝင်စာရင်း တင်ပြီးသည်နှင့် Background Queue Job မှတဆင့် Cloud Server ထဲသို့ အလိုအလျောက် Data ရောက်ရှိသွားမည် ဖြစ်ပါသည်။[cite: 2]

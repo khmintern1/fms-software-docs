@@ -16,8 +16,8 @@ The system also integrates supporting libraries for UI components, data fetching
 │             Frontend                 │
 │                                      │
 │  Next.js 15 · React 19 · TypeScript  │
-│  Tailwind CSS · Radix UI              │
-│  TanStack Query · Axios               │
+│  Tailwind CSS · Radix UI             │
+│  TanStack Query · Axios              │
 └──────────────────┬───────────────────┘
                    │
                    │ HTTP / REST API
@@ -34,8 +34,7 @@ The system also integrates supporting libraries for UI components, data fetching
 ┌──────────────────────────────────────┐
 │       Supporting Services            │
 │                                      │
-│  Database · Redis / Queues · MQTT     │
-│  External Services · Connected Devices│
+│  Database · Redis / Queues · MQTT    │
 └──────────────────────────────────────┘
 ```
 
@@ -295,3 +294,4 @@ Additional tools and libraries support MQTT messaging, automated testing, code q
 
 *Document type: Technical Documentation*  
 *Project: Fuel Management System (Sixth Kendra)*
+
