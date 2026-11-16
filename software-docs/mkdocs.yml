@@ -8,7 +8,9 @@ nav:
   - Project Documentation:
       - Project Overview: overview.md
       - Requirements: requirements.md
-      - System Architecture: architecture.md
+
+  - System Architecture:
+      - Architecture Overview: architecture.md
       - Technology Stack: techstack.md
 
   - System Workflows:
@@ -19,29 +21,60 @@ nav:
       - Start / End Session Workflow: workflows/start-end-session.md
       - Credit Sale Workflow: workflows/credit-sale-and-payment-workflow.md
 
-  # - Business Logic & Formulas:
-  #     - Fuel Sales Formulas: formulas/sales.md
-  #     - Fuel Conversion: formulas/unit-conversion.md
-  #     - Dispenser Report: formulas/dispenser-report.md
-  #     - Tank Report: formulas/tank-report.md
-  #     - Fuel Delivery Report: formulas/fuel-delivery.md
-  #     - Daily Sales Report: formulas/daily-sales.md
+  - Business Logic & Formulas:
+      - Calculation Reference: formulas/index.md
+      - Fuel Sales Formulas: formulas/sales.md
+      - Fuel Conversion: formulas/unit-conversion.md
+      - Tank Report: formulas/tank-report.md
+      - Dispenser Report: formulas/dispenser-report.md
+      - Fuel Delivery Report: formulas/fuel-delivery.md
+      - Daily Sales Report: formulas/daily-sales.md
 
-  # - Technical Reference:
-  #   - Database Design: database.md
-  #   - API Documentation: api.md
-  #   - Authentication & Authorization: authentication.md
+  - Technical Reference:
+      - Database Design: technical-reference/database.md
+      - API Documentation: technical-reference/api.md
+      - Authentication & Authorization: technical-reference/authentication.md
 
-  # - User Guide:
-  #     - User Manual: user-manual.md
+  - User Guide:
+      - Overview: user-guide/index.md
+      - Application Website: user-guide/application-website.md
+      - Device Control: user-guide/device-control.md
+      - Sales Management: user-guide/sales.md
+      - Reports & Tank Management: user-guide/reports.md
+      - Master Data Management: user-guide/master-data.md
+  - Installer Guide:
+      - Overview: installer-guide/index.md
+      - Before You Begin: installer-guide/before-you-begin.md
+      - Shop & Station Setup: installer-guide/shop-station-setup.md
+      - Tank, Fuel Type & History Setup: installer-guide/tank-fuel-history-setup.md
+      - Stock Price Setup: installer-guide/stock-price-setup.md
+      - Dispenser & Nozzle Setup: installer-guide/dispenser-nozzle-setup.md
+      - Cashier Account Setup: installer-guide/cashier-setup.md
+      - Fuel In Setup: installer-guide/fuel-in-setup.md
+      - Firmware OTA Update: installer-guide/firmware-ota-update.md
+      - Installer Checklist: installer-guide/installer-checklist.md
 
-  # - Development & Operations:
-  #     - Installation & Setup: installation.md
-  #     - Testing: testing.md
-  #     - Deployment & Maintenance: deployment.md
+  - Downloads: 
+      - downloads/index.md
+  - Development & Operations:
+      - Installation & Setup: installation.md
+      - MQTT Integration: mqtt.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
 
 theme:
   name: readthedocs
+  custom_dir: overrides
 
 extra_css:
   - extra.css

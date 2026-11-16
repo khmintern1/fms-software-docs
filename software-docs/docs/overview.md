@@ -21,7 +21,7 @@ FMS ၏ အဓိကရည်ရွယ်ချက်မှာ ဆီဆို�
 
 ဤစနစ်မှတစ်ဆင့် ဝန်ထမ်းများသည် အောက်ပါလုပ်ငန်းများကို မှတ်တမ်းတင်ခြင်းနှင့် ပြန်လည်စစ်ဆေးခြင်းတို့ ပြုလုပ်နိုင်သည်။
 
-- အရောင်းမှတ်တမ်းများ
+- အရောင်းမှတ်တမ်းများ 
 - ဆီပို့ဆောင်ဖြည့်တင်းမှု မှတ်တမ်းများ
 - ဆီဈေးနှုန်းများ
 - ဆီဆိုင်သုံး စက်ပစ္စည်းများ
@@ -134,14 +134,25 @@ MQTT ကို Configure လုပ်ထားပါက Real-time Communication 
 
 # Technology Stack (အသုံးပြုထားသော နည်းပညာများ)
 
-| အပိုင်း | နည်းပညာ |
-|---|---|
-| Backend | PHP 8.2 သို့မဟုတ် နောက်ပိုင်း Version၊ Laravel 11 |
-| Frontend | Next.js 15၊ React 19၊ TypeScript |
-| Database | MySQL |
-| Cache နှင့် Queue | Redis၊ Laravel Horizon |
-| Device Messaging | MQTT |
-| Deployment | Docker Compose၊ Local Station နှင့် Cloud Configuration များ |
+| အပိုင်း | နည်းပညာ | Previous Version | Updated Version |
+|---|---|---|---|
+| Backend | PHP | 8.2 | 8.2.35 |
+| Backend | Laravel | 11 | 11 |
+| Frontend | Next.js | 15 | 15 |
+| Frontend | React | 19 | 19 |
+| Frontend | TypeScript | 5 | 5 |
+| Database | MySQL | TBD | TBD |
+| Cache & Queue | Redis | TBD | TBD |
+| Queue Monitoring | Laravel Horizon | TBD | TBD |
+| Device Messaging | MQTT | TBD | TBD |
+| Deployment | Docker Compose | TBD | TBD |
+
+**Version Update မှတ်ချက်**
+
+- **Previous Version** – ယခင်အသုံးပြုခဲ့သော Version။
+- **Updated Version** – လက်ရှိအသုံးပြုနေသော Version။
+- `TBD` – Version အတိအကျ မသတ်မှတ်ရသေးပါ။
+- Version ပြောင်းလဲမှုမရှိပါက Previous Version နှင့် Updated Version တူညီစွာ ဖော်ပြထားသည်။
 
 
 # Deployment Modes
@@ -183,7 +194,7 @@ Installer သည် အောက်ပါအချက်များကို �
 ထို့ကြောင့် Deployment မလုပ်မီ Server IP၊ DHCP Range နှင့် အမြဲတမ်း IP Address အသုံးပြုမည့် Pump၊ POS၊ Printer ကဲ့သို့သော ကိရိယာများကို ကြိုတင်စီစဉ်ထားရန် လိုအပ်သည်။
 
 ### MQTT နှင့် ATG Integration
-
+  
 Dispenser သို့မဟုတ် အခြား Device များနှင့် အလိုအလျောက် စာတိုပေးပို့ခြင်းနှင့် လက်ခံခြင်းတို့ လုပ်ဆောင်ရန် လိုအပ်ပါက MQTT Broker ကို ချိတ်ဆက်ပြီး Device များ၏ Topic နှင့် Message ပုံစံများကို ကိုက်ညီအောင် Configure လုပ်ရသည်။
 
 ATG Tank Reading များကို အသုံးပြုရန်လည်း သက်ဆိုင်ရာ ATG Service နှင့် ချိတ်ဆက်ထားရမည်။

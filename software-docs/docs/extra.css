@@ -21,3 +21,367 @@
 .wy-table-responsive {
     overflow-x: auto;
 }
+
+
+
+/* FMS Sidebar - Dark Minimal Design */
+
+.fms-sidebar-info {
+    margin: 22px 18px 18px;
+    padding: 15px 12px 12px;
+    background: transparent;
+    border-top: 1px solid #5b5b5b;
+    color: #e5e5e5;
+    font-size: 11px;
+}
+
+.fms-sidebar-title {
+    margin-bottom: 14px;
+    color: #61b8f5;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.fms-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.fms-info-row span,
+.fms-info-author span {
+    color: #bdbdbd;
+}
+
+.fms-info-row strong {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.fms-info-author {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 13px;
+}
+
+.fms-info-author strong {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.fms-sidebar-copyright {
+    border-top: 1px solid #555555;
+    margin-top: 13px;
+    padding-top: 11px;
+    color: #aaaaaa;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .fms-sidebar-info {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+
+
+/* =================================
+   FMS SIDEBAR BRAND HEADER
+================================= */
+
+.wy-side-nav-search {
+    background: #26364a !important;
+    padding: 20px 15px 15px !important;
+}
+
+/* Company Logo and Name */
+.wy-side-nav-search > a.fms-brand-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 !important;
+    margin-bottom: 10px !important;
+    justify-content: Center;
+    background: transparent !important;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+.fms-brand-header img {
+    display: block;
+    width: 46px;
+    height: 46px;
+    /* flex: 0 0 46px; */
+    object-fit: contain;
+    padding: 4px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 7px;
+    margin:0 10px 0 0!important;
+}
+
+.fms-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.fms-brand-text strong {
+    color: #ffffff;
+    font-size: 14px!important;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+}
+
+.fms-brand-text small {
+    color: #b9c8d9;
+    font-size: 10px;
+}
+
+/* Search Box */
+.wy-side-nav-search input[type="text"] {
+    width: 100%;
+    height: 34px;
+    border: none;
+    border-radius: 18px;
+    padding: 5px 14px;
+    box-shadow: none;
+    font-size: 12px;
+}
+
+/* Small Documentation Label */
+.wy-side-nav-search::after {
+    /* content: "FMS TECHNICAL DOCUMENTATION"; */
+    display: block;
+    margin-top: 13px;
+    color: #8fc9f4;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+
+.fms-sidebar-copyright {
+    /* display: flex; */
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #555555;
+    margin-top: 13px;
+    padding-top: 11px;
+    color: #aaaaaa;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.fms-sidebar-copyright img {
+    /* width: 22px;
+    height: 22px; */
+    object-fit: contain;
+    flex-shrink: 0;
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+
+.login-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.login-text {
+    line-height: 1.8;
+}
+
+.login-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .login-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================
+   FMS Documentation Download Center
+===================================== */
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.download-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  min-height: 300px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.035);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+              border-color 0.25s ease;
+}
+
+.download-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+  border-color: #3498db;
+}
+
+.download-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.download-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 13px;
+  font-size: 30px;
+  background: #eef6ff;
+}
+
+.download-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 7px 10px;
+  border-radius: 20px;
+}
+
+.download-card h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  color: #1e293b;
+}
+
+.download-description {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+.download-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.download-meta span {
+  font-size: 11px;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+
+.download-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  background: #2563a6;
+  color: #ffffff !important;
+  border-radius: 8px;
+  text-decoration: none !important;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.download-button:hover {
+  background: #174b82;
+  color: #ffffff !important;
+}
+
+.download-button span {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.download-note {
+  margin-top: 30px;
+  padding: 18px 22px;
+  background: #f1f6fb;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .download-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .download-card {
+    min-height: 280px;
+    padding: 22px;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .download-card {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .download-card h3 {
+    color: #f1f5f9;
+  }
+
+  .download-description {
+    color: #cbd5e1;
+  }
+
+  .download-note {
+    background: #1e293b;
+    color: #cbd5e1;
+  }
+}

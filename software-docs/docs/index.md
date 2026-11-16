@@ -1,83 +1,142 @@
 # Fuel Management System (FMS)
 
-Welcome to the **Fuel Management System (FMS) Technical Documentation** for Sixth Kendra.
+**Technical Documentation | Sixth Kendra**
 
-This documentation provides an overview of the system architecture, technology stack, database design, API interfaces, system workflows, and operational procedures.
+Welcome to the official technical documentation of the **Fuel Management System (FMS)**.
 
-It is intended for developers, system administrators, testers, and technical teams involved in developing, maintaining, and operating the FMS.
+This documentation provides a comprehensive technical reference for understanding the system architecture, software components, database design, API interfaces, business logic, operational workflows, and installation procedures.
+
+It is intended for developers, system administrators, testers, installers, and technical teams responsible for developing, maintaining, deploying, and operating the FMS.
 
 ---
 
-## Project Overview
+## System Overview
 
-The Fuel Management System is designed to support fuel station operations and centralized management.
+The **Fuel Management System (FMS)** is designed to manage fuel station operations and provide centralized management across multiple stations.
 
-The system documentation covers the technical structure and key processes of the application, including system components, data management, authentication, and fuel transaction workflows.
+The system integrates software applications with station equipment to support fuel transactions, dispenser operations, fuel inventory management, business calculations, and operational reporting.
 
 ### System Modes
 
-- **Local Mode** — Supports operations at individual fuel stations and communication with station equipment.
-- **Cloud Mode** — Supports centralized management and reporting across stations.
+| Local Mode | Cloud Mode |
+|---|---|
+| Manages individual fuel station operations. | Provides centralized management across multiple stations. |
+| Supports communication with station equipment and dispensers. | Supports centralized monitoring and reporting. |
+| Processes local transactions and operational data. | Consolidates station information and business data. |
 
 ---
 
-## Documentation Guide
+## Documentation Center
 
-### 1. Project Documentation
+This documentation is organized into eight main sections. Each section covers a specific area of the FMS.
 
-Understand the system's purpose, requirements, architecture, and technology choices.
+### 01. Project Documentation
 
-- [Project Overview](overview.md) — Introduction to the FMS project and its objectives.
-- [Requirements](requirements.md) — Functional and non-functional requirements.
-- [System Architecture](architecture.md) — High-level architecture, system components, and data flow.
-- [Technology Stack](techstack.md) — Technologies, frameworks, and libraries used in the project.
+Understand the project objectives, requirements, and overall system background.
 
-### 2. Technical Reference
+- [Project Overview](overview.md)
+- [Requirements](requirements.md)
 
-Explore the system's data structure, APIs, and security mechanisms.
+### 02. System Architecture
 
-- [Database Design](database.md) — Database structure, tables, and relationships.
-- [API Documentation](api.md) — API endpoints, request parameters, and responses.
-- [Authentication & Authorization](authentication.md) — Login, authentication, and access control.
+Explore the system architecture, software components, communication structure, and technology choices.
 
-### 3. System Workflows
+- [Architecture Overview](architecture.md)
+- [Technology Stack](techstack.md)
 
-Understand how key business processes operate step by step.
+### 03. System Workflows
 
-- [Authentication Workflow](workflows/authentication.md) — User authentication process.
-- [Sales Transaction Workflow](workflows/sale-transaction-sequence.md) — Fuel sales transaction process.
-- [Fuel Delivery Workflow](workflows/fuel-delivery.md) — Fuel delivery and recording process.
-- [Price Change Workflow](workflows/price-change.md) — Fuel price update process.
-- [Start / End Session Workflow](workflows/session.md) — Session start and end processes.
-- [Credit Sale Workflow](workflows/credit-sale.md) — Credit sales process.
+Understand how the system handles important business operations through step-by-step workflows.
 
-### 4. User Guide
+- [Authentication Workflow](workflows/authentication-and-authorization-sequence.md)
+- [Sales Transaction Workflow](workflows/sale-transaction-sequence.md)
+- [Fuel Delivery Workflow](workflows/fuel-in-sequence.md)
+- [Price Change Workflow](workflows/price-change.md)
+- [Start / End Session Workflow](workflows/start-end-session.md)
+- [Credit Sale Workflow](workflows/credit-sale-and-payment-workflow.md)
 
-- [User Manual](user-manual.md) — Instructions for using the system's features.
+### 04. Business Logic & Formulas
 
-### 5. Development & Operations
+Reference the calculation methods and business rules used in fuel sales, inventory management, and reporting.
 
-Guides for setting up, testing, deploying, and maintaining the application.
+- [Calculation Reference](formulas/index.md)
+- [Fuel Sales Formulas](formulas/sales.md)
+- [Fuel Conversion](formulas/unit-conversion.md)
+- [Tank Report](formulas/tank-report.md)
+- [Dispenser Report](formulas/dispenser-report.md)
+- [Fuel Delivery Report](formulas/fuel-delivery.md)
+- [Daily Sales Report](formulas/daily-sales.md)
 
-- [Installation & Setup](installation.md) — Development environment setup and installation.
-- [Testing](testing.md) — Testing procedures and test execution.
-- [Deployment & Maintenance](deployment.md) — Deployment configuration and maintenance procedures.
+### 05. Technical Reference
+
+Explore the system's database structure, API interfaces, and security mechanisms.
+
+- [Database Design](technical-reference/database.md)
+- [API Documentation](technical-reference/api.md)
+- [Authentication & Authorization](technical-reference/authentication.md)
+
+### 06. User Guide
+
+Learn how to use the FMS application and manage its main features.
+
+- [User Guide Overview](user-guide/index.md)
+- [Application Website](user-guide/application-website.md)
+- [Device Control](user-guide/device-control.md)
+- [Sales Management](user-guide/sales.md)
+- [Reports & Tank Management](user-guide/reports.md)
+- [Master Data Management](user-guide/master-data.md)
+
+### 07. Installer Guide
+
+Follow the installation procedures for configuring a fuel station and its related equipment.
+
+- [Installer Guide Overview](installer-guide/index.md)
+- [Before You Begin](installer-guide/before-you-begin.md)
+- [Shop & Station Setup](installer-guide/shop-station-setup.md)
+- [Tank, Fuel Type & History Setup](installer-guide/tank-fuel-history-setup.md)
+- [Stock Price Setup](installer-guide/stock-price-setup.md)
+- [Dispenser & Nozzle Setup](installer-guide/dispenser-nozzle-setup.md)
+- [Cashier Account Setup](installer-guide/cashier-setup.md)
+- [Fuel In Setup](installer-guide/fuel-in-setup.md)
+- [Firmware OTA Update](installer-guide/firmware-ota-update.md)
+- [Installer Checklist](installer-guide/installer-checklist.md)
+
+### 08. Development & Operations
+
+Find technical instructions for setting up, configuring, and maintaining the application.
+
+- [Installation & Setup](installation.md)
+- [MQTT Integration](mqtt.md)
 
 ---
 
-## How to Use This Documentation
+## Getting Started
 
-1. Start with **Project Overview** to understand the system's purpose.
-2. Read **System Architecture** to learn how the components interact.
-3. Review **Technology Stack** and **Database Design** for technical details.
-4. Explore **System Workflows** to understand individual business processes.
-5. Refer to **API Documentation** and **Authentication & Authorization** when working with backend integration and security.
-6. Use **Installation & Setup** to prepare the development environment.
+Choose the appropriate starting point based on your role and responsibilities.
+
+| Role | Recommended Starting Point |
+|---|---|
+| Developer | Project Documentation → System Architecture → Technical Reference |
+| System Administrator | System Architecture → Installation & Setup → MQTT Integration |
+| Tester | Requirements → System Workflows → User Guide |
+| Installer | Installer Guide → Installer Checklist |
+| Application User | User Guide → Application Website |
 
 ---
 
-## Documentation Scope
+## Documentation Maintenance
 
-This documentation focuses on the system's architecture, technical implementation, business workflows, and operational guidance.
+This documentation is maintained alongside the FMS source code to ensure that technical information remains consistent with the actual system implementation.
 
-The content should be maintained alongside the source code so that documented behavior, API interfaces, and system workflows remain consistent with the actual implementation.
+Any changes to system architecture, database structures, API interfaces, business rules, workflows, or installation procedures should be reflected in their corresponding documentation pages.
+
+---
+
+**Fuel Management System (FMS)**  
+*Technical Documentation — Sixth Kendra*
+
+**Version:** V2.2
+
+**Author:** iih (Innovatic IoT House)
+
+**© 2025 Digital Engineering Tech Ltd.

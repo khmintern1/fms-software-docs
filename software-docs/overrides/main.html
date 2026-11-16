@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block site_name %}
+<a href="{{ nav.homepage.url|url }}" class="fms-brand-header">
+  <img src="{{ base_url }}/images/company-logo.jpg"
+       alt="Innovatic IoT House">
+
+  <span class="fms-brand-text">
+    <strong>Digital Engineering Tech Ltd.</strong>
+  </span>
+</a>
+{% endblock %}
+
+{% block site_nav %}
+{{ super() }}
+
+<div class="fms-sidebar-info">
+  <div class="fms-sidebar-title">DOCUMENT INFORMATION</div>
+
+  <div class="fms-info-row">
+    <span>Version</span>
+    <strong>V2.1</strong>
+  </div>
+
+  <div class="fms-info-row">
+    <span>Date</span>
+    <strong>  </strong>
+  </div>
+
+  <div class="fms-info-author">
+    <span>AUTHOR</span>
+    <strong>Digital Engineering Tech Ltd.</strong>
+  </div>
+
+
+<div class="fms-sidebar-copyright">
+  <span>© 2025 Digital Engineering Tech Ltd.</span>
+</div>
+
+</div>
+{% endblock %}
